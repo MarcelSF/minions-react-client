@@ -7,3 +7,17 @@
   font-weight: bold;
   color: black;
 }
+
+.App .navbar-right {
+  border-radius: 1px solid black;
+}
+
+.App .navbar-right:hover {
+  font-weight: bold;
+   transition: 0,4s ease;
+}
+
+.App .navbar-default {
+
+  background-color: #f5e050;
+}
