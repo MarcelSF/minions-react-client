@@ -21,3 +21,7 @@
 
   background-color: #f5e050;
 }
+
+.App. .navbar-text {
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 import "./App.css";
 import Routes from "./Routes";
@@ -40,6 +40,9 @@ class App extends Component {
     await Auth.signOut();
 
     this.userHasAuthenticated(false);
+
+    this.props.history.push("/login");
+
   }
 
 
@@ -60,6 +63,9 @@ class App extends Component {
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
+            <Navbar.Text>
+              Miniatures for everyone!
+            </Navbar.Text>
           <Navbar.Collapse>
             <Nav pullRight>
               {this.state.isAuthenticated
@@ -84,5 +90,6 @@ class App extends Component {
 }
 
 
-export default App;
+export default withRouter(App);
+
 
