@@ -25,10 +25,11 @@ export default class AvailableMinions extends Component {
               key={minion.minionId}
               to={`/minions/${minion.minionId}`}
             >
-              <ListGroupItem header={minion.name.trim().split("\n")[0] + "- Color: " + minion.color.trim().split("\n")[0]}>
+              <ListGroupItem header={minion.name.trim().split("\n")[0] + "- Alignment: " + minion.mood}>
 
-
-                <img className="image" src={minion.attachment} style={{width:'150px',borderRadius: '4px',borderSolid: '1px' }}/>
+                <p>{"Description: " + (minion.description)}</p>
+                <p>{"Price: $" + (minion.price)}</p>
+                <img className="image" src={minion.attachment} style={{width:'200px',borderRadius: '4px',borderSolid: '1px' }}/>
 
               </ListGroupItem>
             </LinkContainer>
