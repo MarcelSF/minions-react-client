@@ -8,6 +8,9 @@ export default class Home extends Component {
         <div className="lander">
           <h1>Minions!</h1>
           <p>Get every type of minion you want!</p>
+          <div className="HomeImage">
+            <img className="image" src="https://openbookopenheartdotcom.files.wordpress.com/2013/07/evil-minion-and-purple-animal-despicable-me-21.jpg"/>
+          </div>
         </div>
       </div>
     );
