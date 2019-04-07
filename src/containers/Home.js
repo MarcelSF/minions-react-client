@@ -14,7 +14,7 @@ export default class Home extends Component {
           <p>Get every type of minion you want!</p>
           <LinkContainer to="/minions/available">
             <div className="HomeImage">
-            <Button variant="success">
+            <Button variant="primary">
               Available Minions
             </Button>
               <Nav>

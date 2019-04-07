@@ -35,9 +35,13 @@ export default class Minions extends Component {
     }
   }
 
+
+
   getMinion() {
     return API.get("minions", `/minions/${this.props.match.params.id}`);
   }
+
+
 
 
   handleChange = event => {
