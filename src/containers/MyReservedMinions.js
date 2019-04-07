@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./AvailableMinions.css";
+import "./MyReservedMinions.css";
 import { API } from "aws-amplify";
 import { PageHeader, ListGroup, ListGroupItem } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 
 
-export default class AvailableMinions extends Component {
+export default class MyReservedMinions extends Component {
   constructor(props) {
     super(props);
 
@@ -23,13 +23,13 @@ export default class AvailableMinions extends Component {
         i !== 0
           ? <LinkContainer
               key={minion.minionId}
-              to={`/minions/${minion.minionId}`}
+              to={`/minions/reserved/${minion.minionId}`}
             >
-              <ListGroupItem header={minion.name.trim().split("\n")[0] + "- Color: " + minion.color.trim().split("\n")[0]}>
-
-
+              <ListGroupItem header={minion.name.trim().split("\n")[0]}>
+                <p>{"Description: " + (minion.description)}</p>
+                <p>{"Alignment: " + (minion.mood)}</p>
+                <p>{"Price: $" + (minion.price)}</p>
                 <img className="image" src={minion.attachment} style={{width:'150px',borderRadius: '4px',borderSolid: '1px' }}/>
-
               </ListGroupItem>
             </LinkContainer>
           : <LinkContainer
@@ -55,7 +55,7 @@ export default class AvailableMinions extends Component {
   renderMinions() {
     return (
       <div className="minions">
-        <PageHeader>Available Minions</PageHeader>
+        <PageHeader>Your reserved minions</PageHeader>
         <ListGroup>
           {!this.state.isLoading && this.renderMinionsList(this.state.minions)}
         </ListGroup>
@@ -65,7 +65,7 @@ export default class AvailableMinions extends Component {
 
   render() {
     return (
-      <div className="availableMinions">
+      <div className="reservedMinions">
         {this.props.isAuthenticated ? this.renderMinions() : this.renderLander()}
       </div>
     );

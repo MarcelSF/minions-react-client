@@ -36,7 +36,7 @@ export default class Minions extends Component {
   }
 
   getMinion() {
-    return API.get("minions", `/minions/${this.props.match.params.id}`);
+    return API.get("minions", `/minions/reserved/${this.props.match.params.id}`);
   }
 
 
@@ -46,25 +46,6 @@ export default class Minions extends Component {
     });
   }
 
-  handleDelete = async event => {
-    event.preventDefault();
-
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this note?"
-    );
-
-    if (!confirmed) {
-      return;
-    }
-
-    this.setState({ isDeleting: true });
-  }
-
-saveNote(note) {
-    return API.put("notes", `/notes/${this.props.match.params.id}`, {
-      body: note
-    });
-  }
 
   handleSubmit = async event => {
     let attachment;
@@ -88,8 +69,8 @@ saveNote(note) {
     }
   }
 
-reserveMinion(minion) {
-  return API.patch("minions", `/minions/${this.props.match.params.id}`);
+unreserveMinion(minion) {
+  return API.patch("minions", `/minions/reserved/${this.props.match.params.id}`);
 }
 
 reserveLogic(minion) {
@@ -106,12 +87,20 @@ reserveLogic(minion) {
           />)
               } else {
                 return (
-                  <p> You have already reserved this minion!</p>
-                )
+          <LoaderButton
+            block
+            bsStyle="danger"
+            bsSize="large"
+            isLoading={this.state.isReserving}
+            onClick={this.handleUnreserve}
+            text="Cancel reservation"
+            loadingText="Canceling..."
+          />)
+
               }
 }
 
-handleReserve = async event => {
+handleUnreserve = async event => {
   event.preventDefault();
 
   const confirmed = window.confirm(
@@ -119,7 +108,7 @@ handleReserve = async event => {
   );
 
   try {
-      await this.reserveMinion({
+      await this.unreserveMinion({
       });
       this.props.history.push("/");
     } catch (e) {

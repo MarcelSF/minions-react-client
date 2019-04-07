@@ -1,0 +1,27 @@
+.MyReservedMinions .minions h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MyReservedMinions .minions p {
+  color: #666;
+}
+
+.MyReservedMinions .image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.MyReservedMinions .availableMinions a{
+    width: 600px;
+    text-align: center;
+    align-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+

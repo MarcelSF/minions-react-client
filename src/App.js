@@ -59,19 +59,16 @@ class App extends Component {
         <Navbar fluid collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/">Minions!</Link>
+              <Link to="/">Minions for Everyone!</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
-            <Navbar.Text>
-              Miniatures for everyone!
-            </Navbar.Text>
           <Navbar.Collapse>
             <Nav pullRight>
               {this.state.isAuthenticated
                 ? <Fragment>
-                    <LinkContainer to="/minions/available">
-                      <NavItem>Available Minions</NavItem>
+                    <LinkContainer to="/minions/reserved">
+                      <NavItem>Your Minions</NavItem>
                     </LinkContainer>
                     <NavItem onClick={this.handleLogout}>Logout</NavItem>
                   </Fragment>

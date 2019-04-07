@@ -15,7 +15,7 @@ export default class Home extends Component {
           <LinkContainer to="/minions/available">
             <div className="HomeImage">
             <Button variant="success">
-              <Nav>Available Minions</Nav>
+              Available Minions
             </Button>
               <Nav>
                 <img className="image" src="https://openbookopenheartdotcom.files.wordpress.com/2013/07/evil-minion-and-purple-animal-despicable-me-21.jpg"/>
