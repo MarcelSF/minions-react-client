@@ -26,10 +26,10 @@ export default class MyReservedMinions extends Component {
               to={`/minions/reserved/${minion.minionId}`}
             >
               <ListGroupItem header={minion.name.trim().split("\n")[0]}>
-                <p>{"Description: " + (minion.description)}</p>
+                <img className="image" src={minion.attachment} style={{width:'200px',borderRadius: '4px',marginTop: '20px', marginBottom: '25px' }}/>
+                <p style ={{fontWeight: 'bold'}}>{(minion.description)}</p>
                 <p>{"Alignment: " + (minion.mood)}</p>
                 <p>{"Price: $" + (minion.price)}</p>
-                <img className="image" src={minion.attachment} style={{width:'150px',borderRadius: '4px',borderSolid: '1px' }}/>
               </ListGroupItem>
             </LinkContainer>
           : <LinkContainer

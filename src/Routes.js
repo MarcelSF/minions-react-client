@@ -9,6 +9,9 @@ import AvailableMinions from "./containers/AvailableMinions";
 import MyReservedMinions from "./containers/MyReservedMinions";
 import Minions from "./containers/Minions";
 import ReservedMinion from "./containers/ReservedMinion";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
+
 
 
 
@@ -18,12 +21,12 @@ import ReservedMinion from "./containers/ReservedMinion";
 export default ({ childProps }) =>
   <Switch>
     <AppliedRoute path="/" exact component={Home} props={childProps} />
-    <AppliedRoute path="/login" exact component={Login} props={childProps} />
-    <AppliedRoute path="/signup" exact component={Signup} props={childProps} />
-    <AppliedRoute path="/minions/available" exact component={AvailableMinions} props={childProps} />
-    <AppliedRoute path="/minions/reserved" exact component={MyReservedMinions} props={childProps} />
-    <AppliedRoute path="/minions/:id" exact component={Minions} props={childProps} />
-    <AppliedRoute path="/minions/reserved/:id" exact component={ReservedMinion} props={childProps} />
+    <UnauthenticatedRoute path="/login" exact component={Login} props={childProps} />
+    <UnauthenticatedRoute path="/signup" exact component={Signup} props={childProps} />
+    <AuthenticatedRoute path="/minions/available" exact component={AvailableMinions} props={childProps} />
+    <AuthenticatedRoute path="/minions/reserved" exact component={MyReservedMinions} props={childProps} />
+    <AuthenticatedRoute path="/minions/:id" exact component={Minions} props={childProps} />
+    <AuthenticatedRoute path="/minions/reserved/:id" exact component={ReservedMinion} props={childProps} />
 
     { /* Finally, catch all unmatched routes */ }
     <Route component={NotFound} />

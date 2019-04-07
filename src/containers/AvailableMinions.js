@@ -21,17 +21,19 @@ export default class AvailableMinions extends Component {
     return [{}].concat(minions).map(
       (minion, i) =>
         i !== 0
-          ? <LinkContainer
+          ? <div className="availableMinions">
+            <LinkContainer
               key={minion.minionId}
               to={`/minions/${minion.minionId}`}
             >
               <ListGroupItem header={minion.name.trim().split("\n")[0]}>
-                <p>{"Description: " + (minion.description)}</p>
+                <img className="image" src={minion.attachment} style={{width:'200px',borderRadius: '4px',marginTop: '20px', marginBottom: '25px' }}/>
+                <p style ={{fontWeight: 'bold'}}>{(minion.description)}</p>
                 <p>{"Alignment: " + (minion.mood)}</p>
                 <p>{"Price: $" + (minion.price)}</p>
-                <img className="image" src={minion.attachment} style={{width:'200px',borderRadius: '4px',borderSolid: '1px' }}/>
               </ListGroupItem>
             </LinkContainer>
+            </div>
           : <LinkContainer
               key="new"
               to=""
@@ -39,6 +41,7 @@ export default class AvailableMinions extends Component {
               <ListGroupItem>
               </ListGroupItem>
             </LinkContainer>
+
     );
   }
 

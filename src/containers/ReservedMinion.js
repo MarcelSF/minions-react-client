@@ -123,10 +123,18 @@ render() {
     <div className="Minions">
       {this.state.minion &&
         <form onSubmit={this.handleSubmit}>
-          <ListGroupItem header={this.state.minion.name + "- Alignment: " + this.state.minion.mood + " -Price: $" + this.state.minion.price}>
-              <p style={{textAlign: "center"}}>{this.state.minion.description}</p>
-              <img className="image" src={this.state.minion.attachment} style={{width:'350px',borderRadius: '4px' }}/>
-          </ListGroupItem>
+         <div className="minion-card">
+              <div className="minion-text">
+                <p style={{fontWeight: "bold"}}>{this.state.minion.name}</p>
+                <p>{"Some info about " + this.state.minion.name + ": " + this.state.minion.description}</p>
+                <p style={{fontWeight: "bold"}}>{"Price: $" + this.state.minion.price}</p>
+                <p style={{fontWeight: "bold"}}>{"Alignment: $" + this.state.minion.alignment}</p>
+                <p style={{fontWeight: "bold"}}>{"Color: " + this.state.minion.color}</p>
+              </div>
+              <div className="minion-image">
+                <img className="image" src={this.state.minion.attachment} style={{width:'350px',borderRadius: '4px' }}/>
+              </div>
+            </div>
           {this.reserveLogic()}
 
         </form>}
