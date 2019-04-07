@@ -11,7 +11,8 @@ export default class Home extends Component {
       <div className="Home">
         <div className="lander">
           <h1>Minions!</h1>
-          <p>Get every type of minion you want!</p>
+          <p>For fans and collectors of all ages, we have every kind of minion you can think of!</p>
+          <p>Click below for our available minions:</p>
           <LinkContainer to="/minions/available">
             <div className="HomeImage">
             <Button variant="primary">

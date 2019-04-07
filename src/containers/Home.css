@@ -10,8 +10,25 @@
 
 .Home .lander p {
   color: #999;
+  font-size: 20px;
+  border-top: 5px;
 }
 
 .Home .HomeImage img{
   width: 50%;
+}
+
+.Home .btn{
+  height: 40px;
+  width: 220px;
+  margin-top: 10px;
+  background-color: #0A75BC;
+  color: white;
+  font-size: 18px;
+}
+
+.Home .btn:hover {
+  background-color: white;
+  color: #0A75BC;
+  transition-timing-function: ease;
 }

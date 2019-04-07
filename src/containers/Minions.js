@@ -92,6 +92,7 @@ export default class Minions extends Component {
     try {
         await this.reserveMinion({
         });
+        alert("Minion has been succesfully reserved!")
         this.props.history.push("/");
       } catch (e) {
         alert(e);

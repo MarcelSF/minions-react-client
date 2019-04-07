@@ -111,6 +111,7 @@ handleUnreserve = async event => {
       await this.unreserveMinion({
       });
       this.props.history.push("/");
+      alert("Minion reservation has been canceled")
     } catch (e) {
       alert(e);
       this.setState({ isLoading: false });
