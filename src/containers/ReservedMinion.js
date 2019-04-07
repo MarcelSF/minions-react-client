@@ -126,9 +126,10 @@ render() {
          <div className="minion-card">
               <div className="minion-text">
                 <p style={{fontWeight: "bold"}}>{this.state.minion.name}</p>
-                <p>{"Some info about " + this.state.minion.name + ": " + this.state.minion.description}</p>
+                <p style={{fontWeight: "bold"}}>{"Some info about " + this.state.minion.name + ": "}</p>
+                <p>{this.state.minion.description}</p>
                 <p style={{fontWeight: "bold"}}>{"Price: $" + this.state.minion.price}</p>
-                <p style={{fontWeight: "bold"}}>{"Alignment: $" + this.state.minion.alignment}</p>
+                <p style={{fontWeight: "bold"}}>{"Alignment: " + this.state.minion.mood}</p>
                 <p style={{fontWeight: "bold"}}>{"Color: " + this.state.minion.color}</p>
               </div>
               <div className="minion-image">
