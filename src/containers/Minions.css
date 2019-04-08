@@ -25,3 +25,7 @@
   margin-bottom: 15px;
   margin-top: 20px;
 }
+
+.Minions .minion-card {
+  display: flex;
+}
