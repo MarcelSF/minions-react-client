@@ -104,14 +104,14 @@ handleUnreserve = async event => {
   event.preventDefault();
 
   const confirmed = window.confirm(
-    "Are you sure you want to reserve this minion?"
+    "Are you sure you want to cancel this reservation?"
   );
 
   try {
       await this.unreserveMinion({
       });
       this.props.history.push("/");
-      alert("Minion reservation has been canceled")
+      alert("Minion reservation has been canceled.")
     } catch (e) {
       alert(e);
       this.setState({ isLoading: false });
